@@ -1,0 +1,18 @@
+/* src/components/MainContent.css */
+.main-content {
+  padding: 1rem;
+}
+
+.cubes {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cube {
+  background-color: #ddd;
+  padding: 2rem;
+  flex: 1;
+  text-align: center;
+  border: 1px solid #ccc;
+}
