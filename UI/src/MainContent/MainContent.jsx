@@ -1,4 +1,3 @@
-// src/components/MainContent.jsx
 import React from 'react';
 import './mainContent.css';
 

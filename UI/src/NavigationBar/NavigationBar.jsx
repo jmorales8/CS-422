@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navigationBar.css';
@@ -9,7 +8,7 @@ const NavigationBar = () => {
       <h1>My Website</h1>
       <ul className='navbar-buttons'>
         <li>
-          <Link to="/" className="nav-link">Home</Link>
+          <Link to="/home" className="nav-link">Home</Link>
         </li>
         <li>
           <Link to="/about" className="nav-link">About</Link>
