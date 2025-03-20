@@ -1,48 +1,33 @@
+import './App.css';
+import { useState, useEffect } from "react";
+import { Login } from './Login/Login';
 
-import React, { useState } from "react";
-import {
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import Navbar from "./NavigationBar/NavigationBar";
-import Sidebar from "./SideBar/SideBar";
-import MainContent from "./MainContent/MainContent";
-import Footer from "./Footer/Footer";
-import Login from "./Login/Login";
-import "./App.css";
+const selectedPage = {
+  "/": { component: <>hi</> },
+  "/login": { component: <Login /> }
+};
 
-function App() {
+export default function App() {
+  const [route, setRoute] = useState(window.location.pathname);
 
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  useEffect(() => {
+    const onLocationChange = () => setRoute(window.location.pathname);
+    window.addEventListener("popstate", onLocationChange);
+    return () => window.removeEventListener("popstate", onLocationChange);
+  }, []);
+
+  const navigate = (path) => {
+    window.history.pushState({}, "", path);
+    setRoute(path);
+  };
 
   return (
-    <div className="container">
-      <Routes>
-        <Route
-          path="/*"
-          element={<Login setIsAuthenticated={setIsAuthenticated} />}
-        />
-        <Route
-          path="/home"
-          element={
-            isAuthenticated ? (
-              <>
-                <Navbar />
-                <div className="body">
-                  <Sidebar />
-                  <MainContent />
-                </div>
-                <Footer />
-              </>
-            ) : (
-              <Navigate to="/" />
-            )
-          }
-        />
-      </Routes>
+    <div className="App">
+      <nav>
+        <button onClick={() => navigate("/")}>Home</button>
+        <button onClick={() => navigate("/login")}>Login</button>
+      </nav>
+        {selectedPage[route].component || <h1>404 - Not Found</h1>}
     </div>
   );
 }
-
-export default App;

@@ -1,18 +1,17 @@
-.login-container {
+.login_container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #333;
   color: white;
+  height: 50%;
 }
 
-.login-container h2 {
+.login_container h2 {
   margin-bottom: 20px;
 }
 
-.login-container input {
+.login_container input {
   width: 250px;
   padding: 10px;
   margin: 10px;
@@ -20,7 +19,7 @@
   border-radius: 5px;
 }
 
-.login-container button {
+.login_container button {
   padding: 10px 20px;
   background-color: #28a745;
   border: none;
@@ -29,7 +28,15 @@
   border-radius: 5px;
 }
 
-.login-container button:disabled {
+.login_container button:disabled {
   background-color: gray;
   cursor: not-allowed;
+}
+
+.login_text_username {
+  margin: 7px;
+}
+
+.login_text_password {
+  margin: 10px;
 }

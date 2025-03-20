@@ -1,43 +1,43 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import './login.css';
+import React, { useState } from "react";
+import { handleNavigate } from '../components/Navigate';
+import "./login.css";
 
-const Login = ({ setIsAuthenticated }) => {
+export const Login = ({ setIsAuthenticated }) => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    password: ''
+    name: "",
+    email: "",
+    password: "",
   });
-
-  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
-
-  const isFormValid = formData.name && formData.email && formData.password;
-
-
-  const handleLogin = () => {
-    if (isFormValid) {
-      setIsAuthenticated(true);
-      navigate('/home');
-    }
-  };
-
   return (
-    <div className="login-container">
-      <h2>Login</h2>
-      <input type="text" name="name" placeholder="Name" value={formData.name} onChange={handleChange} />
-      <input type="email" name="email" placeholder="Email" value={formData.email} onChange={handleChange} />
-      <input type="password" name="password" placeholder="Password" value={formData.password} onChange={handleChange} />
-      <button onClick={handleLogin} disabled={!isFormValid}>Enter</button>
+    <div className="login_container">
+      <h2>CreditPath</h2>
+      <div>
+        <span className="login_text_username">Username:</span>
+        <input
+          type="text"
+          name="name"
+          value={formData.name}
+          onChange={handleChange}
+        />
+      </div>
+      <div>
+        <span className="login_text_password">Password:</span>
+        <input
+          type="password"
+          name="password"
+          value={formData.password}
+          onChange={handleChange}
+        />
+      </div>
+      <button onClick={() => handleNavigate("/")}>Login</button>
     </div>
   );
 };
-
-export default Login;
