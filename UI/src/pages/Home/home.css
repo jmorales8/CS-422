@@ -1,0 +1,25 @@
+.home_content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 80%;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.home_header {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 25px;
+}
+
+.home_option_buttons {
+  width: 50%;
+}
+
+.home_option_buttons_container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 15%;
+}
