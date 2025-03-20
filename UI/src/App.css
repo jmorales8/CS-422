@@ -28,7 +28,39 @@
 .App-link {
   color: #61dafb;
 }
+.return_button {
+  padding: 10px 20px;
+  background-color: #1b1618;
+  border: none;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
 
+.return_button_container {
+  padding: 26px;
+}
+
+.navigation_buttons {
+  min-height: 50%;
+  transition-duration: 0.4s;
+  border-radius: 10px;
+  font-size: larger;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.navigation_buttons:hover {
+  background-color: #0452aa;
+  color: white;
+}
+
+.standard_page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

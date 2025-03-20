@@ -1,10 +1,14 @@
-import './App.css';
+import "./App.css";
 import { useState, useEffect } from "react";
-import { Login } from './Login/Login';
+import { Login } from "./pages/Login/Login";
+import { Home } from "./pages/Home/Home";
+import { FindACard } from "./pages/FindACard/FindACard";
 
 const selectedPage = {
-  "/": { component: <>hi</> },
-  "/login": { component: <Login /> }
+  "/": {component: <></>},
+  "/login": { component: <Login /> },
+  "/home": {component: <Home />},
+  "/find-a-card": { component: <FindACard /> },
 };
 
 export default function App() {
@@ -16,18 +20,17 @@ export default function App() {
     return () => window.removeEventListener("popstate", onLocationChange);
   }, []);
 
-  const navigate = (path) => {
-    window.history.pushState({}, "", path);
-    setRoute(path);
-  };
+  useEffect(() => {
+    // Redirect to /login if the current path is "/"
+    if (window.location.pathname === "/") {
+      window.history.replaceState({}, "", "/login"); // Use replaceState to avoid history back to "/"
+      setRoute("/login");
+    }
+  });
 
   return (
     <div className="App">
-      <nav>
-        <button onClick={() => navigate("/")}>Home</button>
-        <button onClick={() => navigate("/login")}>Login</button>
-      </nav>
-        {selectedPage[route].component || <h1>404 - Not Found</h1>}
+      {selectedPage[route].component || <h1>404 - Not Found</h1>}
     </div>
   );
 }
