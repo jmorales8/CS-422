@@ -3,12 +3,14 @@ import { useState, useEffect } from "react";
 import { Login } from "./pages/Login/Login";
 import { Home } from "./pages/Home/Home";
 import { FindACard } from "./pages/FindACard/FindACard";
+import { RecommendedCards } from "./pages/RecommendedCards/RecommendedCards";
 
 const selectedPage = {
   "/": {component: <></>},
   "/login": { component: <Login /> },
   "/home": {component: <Home />},
   "/find-a-card": { component: <FindACard /> },
+  "/recommended-cards": { component: <RecommendedCards />},
 };
 
 export default function App() {
@@ -18,7 +20,7 @@ export default function App() {
     const onLocationChange = () => setRoute(window.location.pathname);
     window.addEventListener("popstate", onLocationChange);
     return () => window.removeEventListener("popstate", onLocationChange);
-  }, []);
+  },[]);
 
   useEffect(() => {
     // Redirect to /login if the current path is "/"
@@ -26,7 +28,7 @@ export default function App() {
       window.history.replaceState({}, "", "/login"); // Use replaceState to avoid history back to "/"
       setRoute("/login");
     }
-  });
+  }, []);
 
   return (
     <div className="App">

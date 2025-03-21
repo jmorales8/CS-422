@@ -28,7 +28,7 @@ export function FindACard() {
           <button className="navigation_buttons FAC_option_buttons">Student Card</button>
         </span>
         <div className="FAC_option_button_container">
-          <button className="navigation_buttons FAC_option_button">See Recommend card</button>
+          <button className="navigation_buttons FAC_option_button" onClick={() => handleNavigate("recommended-cards")}>See Recommend Cards</button>
         </div>
       </div>
     </div>

@@ -4,13 +4,7 @@
   align-items: center;
   height: 80%;
   width: 100%;
-  justify-content: space-evenly;
-}
-
-.home_header {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 25px;
+  justify-content: space-around;
 }
 
 .home_option_buttons {
@@ -22,4 +16,14 @@
   justify-content: center;
   width: 100%;
   height: 15%;
+}
+
+.home_creditPathLogo_container {
+  display: flex;
+  justify-content: center;
+  height: auto;
+}
+
+.home_creditPathLogo {
+  height: 120px;
 }

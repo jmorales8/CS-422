@@ -20,7 +20,13 @@ export function Home() {
           Sign out
         </button>
       </div>
-      <h1 className="home_header">Credit Path</h1>
+      <div className="home_creditPathLogo_container">
+        <img
+          className="home_creditPathLogo"
+          src="CreditPathLogo.png"
+          alt="CreditPathLogo"
+        />
+      </div>
       <div className="home_content">
         {buttons.map((button) => (
           <div className="home_option_buttons_container">
