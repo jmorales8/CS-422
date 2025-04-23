@@ -1,0 +1,50 @@
+.CSP_page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.CSP_page_rows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 75%;
+  justify-content: space-evenly;
+}
+
+.CSP_page_row {
+  display: flex;
+}
+
+.CSP_creditScore {
+  margin-right: 15px;
+  background-color: #ffffff6f;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: x-large;
+}
+
+.CSP_button {
+  margin-right: 15px;
+  cursor: pointer;
+  padding: 13px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: x-large;
+  transition-duration: 0.4s;
+}
+
+.CSP_button:hover {
+  background-color: #0452aa;
+  color: white;
+}
+
+.CSP_upcomingPayment {
+  background-color: #ffffff6f;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-size: x-large;
+}

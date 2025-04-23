@@ -14,7 +14,9 @@
   cursor: pointer;
   border-radius: 5px;
 }
-
+.return_button:hover {
+  background-color: #3c3538;
+}
 .return_button_container {
   padding: 26px 0px 0px 26px;
 }
@@ -42,6 +44,13 @@
 
 .back-buttons {
   display: flex;
+}
+
+.navbar_buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 26px;
+  margin-bottom: 26px;
 }
 
 /* Bigger screen */

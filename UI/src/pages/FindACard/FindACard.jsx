@@ -14,7 +14,7 @@ export function FindACard() {
           Back
         </button>
       </div>
-      <div className="FAC_header_text">
+      <div className="header_text">
         <h1>Find a Credit Card</h1>
         <h2>Question: What is your priority?</h2>
       </div>

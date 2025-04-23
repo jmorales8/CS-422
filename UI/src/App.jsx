@@ -3,7 +3,11 @@ import { useState, useEffect } from "react";
 import { Login } from "./pages/Login/Login";
 import { Home } from "./pages/Home/Home";
 import { FindACard } from "./pages/FindACard/FindACard";
-import { RecommendedCards } from "./pages/RecommendedCards/RecommendedCards";
+import { RecommendedCards } from "./pages/FindACard/RecommendedCards/RecommendedCards";
+import { CreditScorePayments } from "./pages/CreditScorePayments/CreditScorePayments";
+import { SpendingSimulator } from "./pages/SpendingSimulator/SpendingSimulator";
+import { CreditEducationHub } from "./pages/CreditEducation/CreditEducationHub";
+import { StartLesson } from "./pages/CreditEducation/StartLesson/StartLesson";
 
 const selectedPage = {
   "/": {component: <></>},
@@ -11,6 +15,11 @@ const selectedPage = {
   "/home": {component: <Home />},
   "/find-a-card": { component: <FindACard /> },
   "/recommended-cards": { component: <RecommendedCards />},
+  "/score-and-payments": { component: <CreditScorePayments />},
+  "/spending-simulator": { component: <SpendingSimulator />},
+  "/education-hub": { component: <CreditEducationHub />},
+  "/start-lesson": { component: <StartLesson />},
+  
 };
 
 export default function App() {
