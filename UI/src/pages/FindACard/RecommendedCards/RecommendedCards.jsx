@@ -33,43 +33,43 @@ const placeholderCardInfo = [
     link: "https://www.chase.com/personal/credit-cards/credit-builder",
   },
 ];
-
 export function RecommendedCards() {
   return (
-    <div className="standard_page rec-cards_page">
-      <span className="back-buttons">
+    <div className="standard_page">
+      <div className="back-buttons">
         {buttons.map((button) => (
           <div key={button.label} className="return_button_container">
             <button
-              onClick={() => {
-                handleNavigate(button.path);
-              }}
+              onClick={() => handleNavigate(button.path)}
               className="return_button"
             >
               {button.label}
             </button>
           </div>
         ))}
-      </span>
+      </div>
 
-      <div className="rec-cards_content">
-        {placeholderCardInfo.map((card, index) => (
-          <div key={index} className="rec-cards_info">
-            <div className="rec-cards_image-and-button">
-              <img src="CreditCard.png" className="rec-cards_card" alt="card" />
-              <button
-                className="small_button"
-                onClick={() => window.open(card.link, "_blank")}
-              >
-                ↑ Apply ↑
-              </button>
+      {/* Make this part scrollable */}
+      <div className="standard_page_scrollable">
+        <div className="rec-cards_content">
+          {placeholderCardInfo.map((card, index) => (
+            <div key={index} className="rec-cards_info">
+              <div className="rec-cards_image-and-button">
+                <img src="CreditCard.png" className="rec-cards_card" alt="card" />
+                <button
+                  className="small_button"
+                  onClick={() => window.open(card.link, "_blank")}
+                >
+                  ↑ Apply ↑
+                </button>
+              </div>
+              <div className="rec-cards_text">
+                <h3>{card.title}</h3>
+                <p>{card.description}</p>
+              </div>
             </div>
-            <div className="rec-cards_text">
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </div>
   );
