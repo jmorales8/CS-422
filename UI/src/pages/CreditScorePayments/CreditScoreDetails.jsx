@@ -1,13 +1,13 @@
 import { handleNavigate } from "../../components/Navigate";
-import "./creditScoreDetails.css"; // Create a new CSS file if you want styling
+import "./creditScoreDetails.css";
 
 export function CreditScoreDetails() {
   return (
-    <div className="standard_page">
+    <div className="standard_page_scrollable"> {/* changed */}
       <div className="return_button_container">
         <button
           onClick={() => {
-            handleNavigate("/score-and-payments"); // Back to the original page
+            handleNavigate("/score-and-payments");
           }}
           className="return_button"
         >
@@ -28,13 +28,11 @@ export function CreditScoreDetails() {
         <div className="CSD_summary">
           <h2>Summary</h2>
           <b>
-            A credit score is a three-digit number that reflects your creditworthiness based on your credit history. 
-            It is used by lenders to assess how risky it is to lend you money or extend you credit.
+            A credit score is a three-digit number that reflects your creditworthiness based on your credit history.
           </b>
           <p>
             Having a good credit score (typically 700 or above) is important because it helps you qualify for better interest rates,
-            higher credit limits, and more financial opportunities like mortgages, car loans, and credit cards. 
-            It can also impact things like renting an apartment or getting a phone plan.
+            higher credit limits, and more financial opportunities like mortgages, car loans, and credit cards.
           </p>
           <b>
             Maintaining a strong credit score involves paying bills on time, keeping balances low, and managing different types of credit responsibly.
