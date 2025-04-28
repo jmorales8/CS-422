@@ -76,64 +76,63 @@ export function CreditCardQuiz() {
   };
 
   return (
-    <div className="standard_page">
-      <div className="return_button_container">
-        <button
-          onClick={() => handleNavigate("/home")}
-          className="return_button"
-        >
-          Back
-        </button>
-      </div>
+<div className="standard_page">
+  <div className="return_button_container">
+    <button
+      onClick={() => handleNavigate("/home")}
+      className="return_button"
+    >
+      Back
+    </button>
+  </div>
 
-      <div className="page_scrollable_content">
-        <div className="quiz_page">
-          <h1>Credit Card Quiz</h1>
+  {/* Make scroll happen on this div */}
+  <div className="standard_page_scrollable">
+    <div className="quiz_page">
+      <h1>Credit Card Quiz</h1>
 
-          {questions.map((q, idx) => (
-            <div key={idx} className="quiz_question">
-              <h3>{idx + 1}. {q.question}</h3>
-              <div className="quiz_options">
-                {q.options.map((option, oidx) => (
-                  <label key={oidx} className="quiz_option_label">
-                    <input
-                      type="radio"
-                      name={`question-${idx}`}
-                      value={option}
-                      checked={userAnswers[idx] === option}
-                      onChange={() => handleOptionChange(idx, option)}
-                    />
-                    {option}
-                  </label>
-                ))}
-              </div>
-            </div>
-          ))}
-
-          {/* "Done" button (always visible) */}
-          {score === null && (
-            <button className="small_button" onClick={handleSubmit}>
-              Done
-            </button>
-          )}
-
-          {/* After finishing quiz */}
-          {score !== null && (
-            <div className="quiz_results">
-              <h2>You got {score} out of {questions.length} correct!</h2>
-
-              {/* Return Home button */}
-              <button
-                className="small_button"
-                onClick={() => handleNavigate("/home")}
-                style={{ marginTop: "20px" }}
-              >
-                Return Home
-              </button>
-            </div>
-          )}
+      {questions.map((q, idx) => (
+        <div key={idx} className="quiz_question">
+          <h3>{idx + 1}. {q.question}</h3>
+          <div className="quiz_options">
+            {q.options.map((option, oidx) => (
+              <label key={oidx} className="quiz_option_label">
+                <input
+                  type="radio"
+                  name={`question-${idx}`}
+                  value={option}
+                  checked={userAnswers[idx] === option}
+                  onChange={() => handleOptionChange(idx, option)}
+                />
+                {option}
+              </label>
+            ))}
+          </div>
         </div>
-      </div>
+      ))}
+
+      {score === null && (
+        <button className="small_button" onClick={handleSubmit}>
+          Done
+        </button>
+      )}
+
+      {score !== null && (
+        <div className="quiz_results">
+          <h2>You got {score} out of {questions.length} correct!</h2>
+
+          <button
+            className="small_button"
+            onClick={() => handleNavigate("/home")}
+            style={{ marginTop: "20px" }}
+          >
+            Return Home
+          </button>
+        </div>
+      )}
     </div>
+  </div>
+</div>
+
   );
 }

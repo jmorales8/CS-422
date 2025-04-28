@@ -1,6 +1,9 @@
 .App {
   background-color: #282c346f;
-  height: 100vh;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-link {
@@ -45,7 +48,6 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow: hidden;
 }
 
 .back-buttons {
@@ -53,12 +55,21 @@
 }
 
 .navbar_buttons {
+  flex-shrink: 0; /* keep buttons visible, no shrinking */
   display: flex;
-  justify-content: space-evenly;
-  margin-top: 26px;
-  margin-bottom: 26px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px;
+  background-color: #282c34; /* optional: background color to separate nav */
 }
-
+.standard_page_scrollable {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 /* Bigger screen */
 @media screen and (min-width: 800px) {
   .navigation_buttons {
