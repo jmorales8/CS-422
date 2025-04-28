@@ -6,62 +6,62 @@ export function CreditEducationHub() {
     <div className="standard_page">
       <div className="return_button_container">
         <button
-          onClick={() => {
-            handleNavigate("/home");
-          }}
+          onClick={() => handleNavigate("/home")}
           className="return_button"
         >
           Back
         </button>
       </div>
+
       <div className="header_text">
         <h1>Credit Education</h1>
         <h2>Select a Topic to Learn About</h2>
       </div>
+
       <div className="FAC_options_container">
         <span className="CEH_option_buttons_container">
           <button
             className="navigation_buttons CEH_option_buttons"
-            onClick={() => handleNavigate("/apr-education")}
+            onClick={() => handleNavigate("/start-lesson?topic=apr")}
           >
             APR
           </button>
           <button
             className="navigation_buttons CEH_option_buttons"
-            onClick={() => handleNavigate("/utilization-education")}
+            onClick={() => handleNavigate("/start-lesson?topic=utilization")}
           >
-            {" "}
             Utilization
           </button>
         </span>
+
         <span className="CEH_option_buttons_container">
           <button
             className="navigation_buttons CEH_option_buttons"
-            onClick={() => handleNavigate("/interest-rates-education")}
+            onClick={() => handleNavigate("/start-lesson?topic=interest-rates")}
           >
             Interest Rates
           </button>
           <button
             className="navigation_buttons CEH_option_buttons"
-            onClick={() => handleNavigate("/annual-fees-education")}
+            onClick={() => handleNavigate("/start-lesson?topic=annual-fees")}
           >
             Annual Fees
           </button>
         </span>
+
         <div className="CEH_option_button_container">
           <button
-            onClick={() => {
-              handleNavigate("/credit-card-quiz"); // Back to the original page
-            }}
+            onClick={() => handleNavigate("/credit-card-quiz")}
             className="navigation_buttons CEH_quiz_button"
           >
             Take Quiz
           </button>
         </div>
+
         <div className="CEH_option_button_container">
           <button
             className="navigation_buttons CEH_lesson_button"
-            onClick={() => handleNavigate("start-lesson")}
+            onClick={() => handleNavigate("/start-lesson")}
           >
             Start Lesson
           </button>

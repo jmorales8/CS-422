@@ -1,33 +1,31 @@
-import { useState } from "react";
-import { mockText } from "../../../components/mockText";
+import { useState, useEffect } from "react";
 import { handleNavigate } from "../../../components/Navigate";
 import "./startLesson.css";
-
-// Navigation buttons
-const navButtons = [
-  { label: "Back", path: "/education-hub" },
-  { label: "Main", path: "/home" },
-  { label: "Take Quiz", path: "/credit-card-quiz"},
-  { label: "Next Topic", path: "next-topic" }, // handled differently!
-];
 
 // Lesson topics (array)
 const lessonTopics = [
   {
-    title: "Understanding Interest Rates",
+    id: "apr",
+    title: "Understanding APR",
     video: "What_is_APR_on_a_Credit_Card____Discover___Card_Smarts.mp4",
-    text: "Is APR the Annuel Rate charged for borrowing money inlcuding transactions fees and/or anymore additional fees?",
+    text: "Is APR the Annual Rate charged for borrowing money including transaction fees and/or any additional fees?",
   },
   {
-    title: "Understanding Minimum Payments",
-    video:
-      "What_is_Credit_Utilization__How_Does_It_Affect_Credit_Score____Capital_One.mp4",
+    id: "utilization",
+    title: "Understanding Utilization",
+    video: "What_is_Credit_Utilization__How_Does_It_Affect_Credit_Score____Capital_One.mp4",
     text: "Minimum payments are the lowest amount you must pay each month. Paying only the minimum increases interest costs.",
   },
   {
-    title: "Understanding Minimum Payments",
-    video:
-      "What_is_an_Annual_Fee_on_a_Credit_Card____Discover___Card_Smarts.mp4",
+    id: "interest-rates",
+    title: "Understanding Interest Rates",
+    video: "interest-rates-video.mp4",
+    text: "Interest rates are the cost of borrowing money, expressed as a percentage. Lower rates are better!",
+  },
+  {
+    id: "annual-fees",
+    title: "Understanding Annual Fees",
+    video: "What_is_an_Annual_Fee_on_a_Credit_Card____Discover___Card_Smarts.mp4",
     text: "Do credit card companies still charge you for the card regardless of when you use it or not?",
   },
 ];
@@ -35,22 +33,27 @@ const lessonTopics = [
 export function StartLesson() {
   const [currentTopicIndex, setCurrentTopicIndex] = useState(0);
 
-  const handleAnswerClick = (isCorrect) => {
-    if (isCorrect) {
-      alert("Correct!");
-    } else {
-      alert("Incorrect, try again!");
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const topicId = params.get("topic");
+
+    if (topicId) {
+      const foundIndex = lessonTopics.findIndex((topic) => topic.id === topicId);
+      if (foundIndex !== -1) {
+        setCurrentTopicIndex(foundIndex);
+      }
     }
+  }, []);
+
+  const handleAnswerClick = (isCorrect) => {
+    alert(isCorrect ? "Correct!" : "Incorrect, try again!");
   };
 
   const handleNavClick = (path) => {
     if (path === "next-topic") {
-      // Move to the next topic (if any)
-      setCurrentTopicIndex((prev) =>
-        Math.min(prev + 1, lessonTopics.length - 1)
-      );
+      setCurrentTopicIndex((prev) => Math.min(prev + 1, lessonTopics.length - 1));
     } else {
-      handleNavigate(path); // Real navigation
+      handleNavigate(path);
     }
   };
 
@@ -59,15 +62,20 @@ export function StartLesson() {
   return (
     <div className="standard_page">
       <div className="navbar_buttons">
-        {navButtons.map((button) => (
-          <button
-            key={button.label}
-            onClick={() => handleNavClick(button.path)}
-            className="return_button"
-          >
-            {button.label}
+        <button className="return_button" onClick={() => handleNavigate("/education-hub")}>
+          Back
+        </button>
+        <button className="return_button" onClick={() => handleNavigate("/home")}>
+          Main
+        </button>
+        <button className="return_button" onClick={() => handleNavigate("/credit-card-quiz")}>
+          Take Quiz
+        </button>
+        {currentTopicIndex < lessonTopics.length - 1 && (
+          <button className="return_button" onClick={() => handleNavClick("next-topic")}>
+            Next Topic
           </button>
-        ))}
+        )}
       </div>
 
       <div className="header_text">
@@ -82,28 +90,18 @@ export function StartLesson() {
               <source src={currentTopic.video} type="video/mp4" />
             </video>
           ) : (
-            <img
-              src={currentTopic.image}
-              alt={currentTopic.title}
-              className="SL_video"
-            />
+            <img src={currentTopic.image} alt={currentTopic.title} className="SL_video" />
           )}
-          <b className="SL_video_text">{currentTopic.text}</b>
-        </div>
 
-        <div className="SL_answers">
-          <button
-            className="small_button"
-            onClick={() => handleAnswerClick(true)}
-          >
-            TRUE
-          </button>
-          <button
-            className="small_button"
-            onClick={() => handleAnswerClick(false)}
-          >
-            FALSE
-          </button>
+          <div className="SL_quiz_section">
+            <button className="small_button" onClick={() => handleAnswerClick(true)}>
+              TRUE
+            </button>
+            <b className="SL_video_text">{currentTopic.text}</b>
+            <button className="small_button" onClick={() => handleAnswerClick(false)}>
+              FALSE
+            </button>
+          </div>
         </div>
       </div>
     </div>

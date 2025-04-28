@@ -30,7 +30,7 @@ const selectedPage = {
   "/apr-education": {component: <AprEducation />},
   "/utilization-education": {component: <UtilizationEducation />},
   "interest-rates-education": {component: <InterestRatesEducation />},
-  "annuel-fees-education": { component: <AnnualFeesEducation />},
+  "annual-fees-education": { component: <AnnualFeesEducation />},
 };
 
 export default function App() {
