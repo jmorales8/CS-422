@@ -21,19 +21,26 @@
   margin-top: 25px;
   justify-content: space-between;
 }
-.SL_answers_button {
+.small_button {
   margin-right: 15px;
   cursor: pointer;
   padding: 13px;
+  transition: background-color 0.4s, color 0.4s;
   border: 1px solid black;
   border-radius: 5px;
   font-size: x-large;
   transition-duration: 0.4s;
 }
 
-.SL_answers_button:hover {
+.small_button:hover {
   background-color: #0452aa;
   color: white;
+}
+
+.small_button:active {
+  background-color: #013570;
+  color: white;
+  transition: none !important;
 }
 
 @media screen and (max-width: 399px) {

@@ -23,7 +23,7 @@
 
 .navigation_buttons {
   min-height: 50%;
-  transition-duration: 0.4s;
+  transition: background-color 0.4s, color 0.4s;
   border-radius: 10px;
   font-size: larger;
   font-weight: 700;
@@ -33,6 +33,12 @@
 .navigation_buttons:hover {
   background-color: #0452aa;
   color: white;
+}
+
+.navigation_buttons:active {
+  background-color: #013570;
+  color: white;
+  transition: none !important;
 }
 
 .standard_page {

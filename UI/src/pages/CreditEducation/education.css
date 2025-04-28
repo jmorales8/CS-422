@@ -1,0 +1,25 @@
+.education_content {
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.education_video_container {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.education_video {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.education_text {
+  margin-top: 20px;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #000000;
+  font-size: x-large;
+  font-weight: 700;
+}

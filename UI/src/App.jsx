@@ -8,18 +8,29 @@ import { CreditScorePayments } from "./pages/CreditScorePayments/CreditScorePaym
 import { SpendingSimulator } from "./pages/SpendingSimulator/SpendingSimulator";
 import { CreditEducationHub } from "./pages/CreditEducation/CreditEducationHub";
 import { StartLesson } from "./pages/CreditEducation/StartLesson/StartLesson";
+import { CreditScoreDetails } from "./pages/CreditScorePayments/CreditScoreDetails";
+import { CreditCardQuiz } from "./pages/CreditEducation/TakeQuiz/CreditCardQuiz";
+import { AprEducation } from "./pages/CreditEducation/AprEducation.jsx/AprEduaction";
+import { UtilizationEducation } from "./pages/CreditEducation/UtilizationEducation.jsx/UtilizationEducation";
+import { InterestRatesEducation } from "./pages/CreditEducation/InterestRatesEducation/InterestRatesEducation";
+import { AnnualFeesEducation } from "./pages/CreditEducation/AnnuelFeesEducation/AnnuelFeesEducation";
 
 const selectedPage = {
-  "/": {component: <></>},
+  "/": { component: <></> },
   "/login": { component: <Login /> },
-  "/home": {component: <Home />},
+  "/home": { component: <Home /> },
   "/find-a-card": { component: <FindACard /> },
-  "/recommended-cards": { component: <RecommendedCards />},
-  "/score-and-payments": { component: <CreditScorePayments />},
-  "/spending-simulator": { component: <SpendingSimulator />},
-  "/education-hub": { component: <CreditEducationHub />},
-  "/start-lesson": { component: <StartLesson />},
-  
+  "/recommended-cards": { component: <RecommendedCards /> },
+  "/score-and-payments": { component: <CreditScorePayments /> },
+  "/spending-simulator": { component: <SpendingSimulator /> },
+  "/education-hub": { component: <CreditEducationHub /> },
+  "/start-lesson": { component: <StartLesson /> },
+  "/credit-score-details": { component: <CreditScoreDetails /> },
+  "/credit-card-quiz": {component: <CreditCardQuiz />},
+  "/apr-education": {component: <AprEducation />},
+  "/utilization-education": {component: <UtilizationEducation />},
+  "interest-rates-education": {component: <InterestRatesEducation />},
+  "annuel-fees-education": { component: <AnnualFeesEducation />},
 };
 
 export default function App() {
@@ -29,7 +40,7 @@ export default function App() {
     const onLocationChange = () => setRoute(window.location.pathname);
     window.addEventListener("popstate", onLocationChange);
     return () => window.removeEventListener("popstate", onLocationChange);
-  },[]);
+  }, []);
 
   useEffect(() => {
     // Redirect to /login if the current path is "/"

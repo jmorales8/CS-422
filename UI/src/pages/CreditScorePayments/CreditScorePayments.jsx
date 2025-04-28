@@ -21,7 +21,12 @@ export function CreditScorePayments() {
               Current Credit Score:
               <span style={{ color: "green" }}> 720</span>
             </span>
-            <button className="CSP_button">More details</button>
+            <button
+              className="CSP_button"
+              onClick={() => handleNavigate("/credit-score-details")}
+            >
+              More details
+            </button>
           </div>
           <div className="CSP_page_row">
             <span className="CSP_upcomingPayment">

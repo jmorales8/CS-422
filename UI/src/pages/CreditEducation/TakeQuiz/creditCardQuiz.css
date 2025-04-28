@@ -1,0 +1,31 @@
+.quiz_scroll_container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.quiz_page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.quiz_question {
+  margin-bottom: 20px;
+}
+
+.quiz_options {
+  margin-top: 10px;
+}
+
+.quiz_option_label {
+  display: block;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.quiz_score {
+  margin-top: 20px;
+  font-size: larger;
+  font-weight: bold;
+  color: green;
+}
