@@ -22,6 +22,7 @@
 }
 .return_button_container {
   padding: 26px 0px 0px 26px;
+  background-color: #282c34;
 }
 
 .navigation_buttons {
@@ -52,6 +53,7 @@
 
 .back-buttons {
   display: flex;
+  background-color: #282c34;
 }
 
 .navbar_buttons {

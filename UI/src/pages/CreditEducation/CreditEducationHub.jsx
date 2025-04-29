@@ -1,7 +1,8 @@
 import { handleNavigate } from "../../components/Navigate";
 import "./creditEducationHub.css";
-
+import { useUser } from "../../contexts/UserContext";
 export function CreditEducationHub() {
+  const { user } = useUser();
   return (
     <div className="standard_page">
       <div className="return_button_container">
@@ -10,7 +11,10 @@ export function CreditEducationHub() {
           className="return_button"
         >
           Back
-        </button>
+        </button>{" "}
+        <span className="username">
+         <b>{user?.name}</b>
+        </span>
       </div>
 
       <div className="header_text">

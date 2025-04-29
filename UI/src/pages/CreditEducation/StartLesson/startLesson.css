@@ -2,41 +2,82 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  overflow-y: auto; /* enable full page scrolling */
+  overflow-y: auto;
+  background: linear-gradient(to bottom right, #e2e6eb, #4c4d67);
+  padding: 20px;
+}
+
+.header_text {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.header_text h1 {
+  font-size: 2.5rem;
+  color: #013570;
+}
+
+.header_text h2 {
+  font-size: 1.5rem;
+  color: #0452aa;
+  margin-top: 10px;
 }
 
 .SL_page {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 30px;
 }
-.SL_video {
-  width: 60%;
-  margin-bottom: 15px;
-}
+
 .SL_video_container {
+  background: white;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.15);
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 90%;
+  max-width: 900px;
 }
+
+.SL_video {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
 .SL_video_text {
-  width: 60%;
+  width: 100%;
+  max-width: 720px;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
 }
-.SL_answers {
+
+.SL_quiz_section {
+  margin-top: 20px;
   display: flex;
-  width: 60%;
-  margin-top: 25px;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
 }
+
 .small_button {
-  margin: 15px;
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: 2px solid #0452aa;
+  background-color: white;
+  color: #0452aa;
+  border-radius: 8px;
   cursor: pointer;
-  padding: 13px;
-  transition: background-color 0.4s, color 0.4s;
-  border: 1px solid black;
-  border-radius: 5px;
-  font-size: x-large;
-  transition-duration: 0.4s;
+  transition: all 0.3s ease;
 }
 
 .small_button:hover {
@@ -47,11 +88,16 @@
 .small_button:active {
   background-color: #013570;
   color: white;
-  transition: none !important;
+  transition: none;
 }
 
-@media screen and (max-width: 399px) {
+@media screen and (max-width: 768px) {
   .SL_video {
     width: 90%;
+  }
+
+  .SL_video_text {
+    width: 90%;
+    font-size: 1rem;
   }
 }

@@ -22,8 +22,17 @@
   display: flex;
   justify-content: center;
   height: auto;
+  margin-top: 10px;
 }
 
 .home_creditPathLogo {
   height: 120px;
+  padding: 20px;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+.username {
+  margin-left: 15px;
+  font-size: larger;
+  color: aliceblue;
 }

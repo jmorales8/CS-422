@@ -3,17 +3,19 @@ import "./creditScoreDetails.css";
 
 export function CreditScoreDetails() {
   return (
+    <>
+    <div className="return_button_container" >
+    <button
+      onClick={() => {
+        handleNavigate("/score-and-payments");
+      }}
+      className="return_button"
+
+    >
+      Back
+    </button>
+  </div>
     <div className="standard_page_scrollable"> {/* changed */}
-      <div className="return_button_container">
-        <button
-          onClick={() => {
-            handleNavigate("/score-and-payments");
-          }}
-          className="return_button"
-        >
-          Back
-        </button>
-      </div>
 
       <div className="CSD_page">
         <h1>This is what a credit score is</h1>
@@ -39,6 +41,6 @@ export function CreditScoreDetails() {
           </b>
         </div>
       </div>
-    </div>
+    </div></>
   );
 }
