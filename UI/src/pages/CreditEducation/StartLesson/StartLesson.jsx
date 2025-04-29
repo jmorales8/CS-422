@@ -19,7 +19,7 @@ const lessonTopics = [
   {
     id: "interest-rates",
     title: "Understanding Interest Rates",
-    video: "interest-rates-video.mp4",
+    video: "Interest_Rates___by_Wall_Street_Survivor.mp4",
     text: "Interest rates are the cost of borrowing money, expressed as a percentage. Lower rates are better!",
   },
   {
