@@ -18,7 +18,7 @@ export function SpendingSimulator() {
   };
 
   return (
-    <div className="standard_page">
+    <div className="standard_page" style={{background: "linear-gradient(to bottom right, #e2e6eb, #4c4d67); !important"}}>
       <div className="return_button_container">
         <button
           onClick={() => {
@@ -30,7 +30,7 @@ export function SpendingSimulator() {
         </button>
       </div>
 
-      <div className="SS_page">
+      <div className="SS_page" style={{background: "linear-gradient(to bottom right, #e2e6eb, #4c4d67); !important"}}>
         <h1>Spending Simulator</h1>
 
         {calculated ? (
